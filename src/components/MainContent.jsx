@@ -1,15 +1,20 @@
 import CreatePost from './CreatePost';
 import PostCollection from './PostCollection';
 import Notifications from './Notifications';
+import Profile from './Profile';
 
-const MainContent = ({selectedTab}) => {
+const MainContent = ({selectedTab, setSelectedTab}) => {
     switch(selectedTab) {
-      case 'Home' :
+      case 'Home':
         return <PostCollection></PostCollection>
       case 'CreatePost' :
-        return <CreatePost></CreatePost>
+        return <CreatePost setSelectedTab={setSelectedTab}></CreatePost>
       case 'Notifications' :
         return <Notifications></Notifications>
+      case 'Explore' :
+        return <PostCollection></PostCollection>
+      case 'Profile' : 
+        return <Profile></Profile>
     }
 }
 

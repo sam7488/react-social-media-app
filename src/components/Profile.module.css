@@ -1,0 +1,54 @@
+.profileHeader {
+  display: flex;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid #dbdbdb;
+  background: #fff;
+}
+
+.profileImg {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.subHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  font-size: 16px;
+  color: #555;
+}
+
+.statItem strong {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.bio {
+  font-size: 14px;
+  color: #333;
+}
+
+.addBio {
+  font-size: 14px;
+  color: #3897f0;
+  cursor: pointer;
+  font-weight: 500;
+}
+.addBio:hover {
+  text-decoration: underline;
+}

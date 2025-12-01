@@ -1,0 +1,121 @@
+.postCard {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sub-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.username {
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.tags {
+  font-size: 12px;
+  font-weight: 400;
+  color: #777;
+  /* margin-top: 1px; */
+  letter-spacing: 0.3px; /* optional, makes tags look neat */
+}
+
+.menuWrapper {
+  margin-left: auto;
+  position: relative;
+}
+
+.menuIcon {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  user-select: none;
+  color: #333;
+}
+
+.menuIcon:hover {
+  color: #000;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+  min-width: 120px;
+  z-index: 20;
+}
+
+.dropdownItem {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background: #f5f5f5;
+}
+
+.postImage {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+  padding: 10px 12px;
+}
+
+.actions i {
+  cursor: pointer;
+}
+
+.liked {
+  color: #e60023;
+}
+
+.likes {
+  font-weight: bold;
+  padding: 0 12px;
+}
+
+.caption {
+  padding: 6px 12px;
+}
+
+.comments {
+  padding: 0 12px 12px 12px;
+  color: #555;
+}
+
+.viewAll {
+  color: #8e8e8e;
+  cursor: pointer;
+}

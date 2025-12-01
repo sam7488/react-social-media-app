@@ -1,55 +1,51 @@
-import css from './Sidebar.module.css'
+import css from "./Sidebar.module.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
-const Sidebar = ({selectedTab, setSelectedTab}) => {
+
+const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
-    <div className={`d-flex flex-column flex-shrink-0 p-3 text-white bg-dark ${css.sidebar}`}>
-    <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <svg className="bi me-2" width="40" height="32"><use xlinkHref="#bootstrap"></use></svg>
-      <span className="fs-4">Sidebar</span>
-    </a>
-    <hr/>
-    <ul className="nav nav-pills flex-column mb-auto">
-      <li className="nav-item" onClick={() => setSelectedTab('Home')}>
-        <a href="#" className={`nav-link text-white ${selectedTab === 'Home' && 'active'}`}>
-          <svg className="bi me-2" width="16" height="16"><use xlinkHref="#home"></use></svg>
-          Home
-        </a>
-      </li>
-      <li onClick={() => setSelectedTab('CreatePost')}>
-        <a href="#" className={`nav-link text-white ${selectedTab === 'CreatePost' && 'active'}`}>
-          <svg className="bi me-2" width="16" height="16"><use xlinkHref="#speedometer2"></use></svg>
-          Create Post
-        </a>
-      </li>
-      <li onClick={() => setSelectedTab('Notifications')}>
-        <a href="#" className={`nav-link text-white ${selectedTab === 'Notifications' && 'active'}`}>
-          <svg className="bi me-2" width="16" height="16"><use xlinkHref="#table"></use></svg>
-          Notifications
-        </a>
-      </li>
-      <li onClick={() => setSelectedTab('Explore')}>
-        <a href="#" className={`nav-link text-white ${selectedTab === 'Explore' && 'active'}`}>
-          <svg className="bi me-2" width="16" height="16"><use xlinkHref="#grid"></use></svg>
-          Explore
-        </a>
-      </li>
-    </ul>
-    <hr/>
-    <div className="dropdown">
-      <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2"/>
-        <strong>mdo</strong>
-      </a>
-      <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a className="dropdown-item" href="#">New project...</a></li>
-        <li><a className="dropdown-item" href="#">Settings</a></li>
-        <li><a className="dropdown-item" href="#">Profile</a></li>
-        <li><hr className="dropdown-divider"/></li>
-        <li><a className="dropdown-item" href="#">Sign out</a></li>
+    <div className={`d-flex flex-column p-3 text-white bg-dark ${css.sidebar}`}>
+
+      {/* Header */}
+      <div className="d-flex align-items-center mb-4">
+        <span className="fs-4 fw-bold">SocialApp</span>
+      </div>
+
+      {/* Navigation */}
+      <ul className="nav nav-pills flex-column mb-auto">
+
+        {[
+          { label: "Home", id: "Home", icon: "house" },
+          { label: "Create Post", id: "CreatePost", icon: "plus-circle" },
+          { label: "Notifications", id: "Notifications", icon: "bell" },
+          { label: "Explore", id: "Explore", icon: "compass" },
+          { label: "Profile", id: "Profile", icon: "person" },
+        ].map((item) => (
+          <li
+            key={item.id}
+            className="nav-item mb-1"
+            onClick={() => setSelectedTab(item.id)}
+          >
+            <button
+              className={`nav-link text-white w-100 text-start ${selectedTab === item.id ? "active" : ""}`}
+            >
+              <i className={`bi bi-${item.icon} me-2`}></i>
+              {item.label}
+            </button>
+          </li>
+        ))}
+
       </ul>
+
+      {/* Sticky bottom login/logout */}
+      <div className={`mt-auto pt-3 border-top ${css['logout-btn']}`}>
+        <button className="btn btn-outline-light w-100">
+          Sign Out
+        </button>
+      </div>
+
     </div>
-  </div>
-  )
-}
+  );
+};
 
 export default Sidebar;

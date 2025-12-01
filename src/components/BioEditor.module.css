@@ -1,0 +1,60 @@
+.bioEditor {
+  width: 100%;
+}
+
+.bioForm {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bioInput {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+}
+
+.bioButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.saveBtn,
+.cancelBtn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.saveBtn {
+  background-color: #3897f0;
+  color: #fff;
+}
+
+.saveBtn:hover {
+  background-color: #2c6dcc;
+}
+
+.cancelBtn {
+  background-color: #efefef;
+  color: #333;
+}
+
+.cancelBtn:hover {
+  background-color: #d8d8d8;
+}
+
+.addBio {
+  font-size: 14px;
+  color: #3897f0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.addBio:hover {
+  text-decoration: underline;
+}
